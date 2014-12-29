@@ -5,6 +5,8 @@
  */
 package com.ddsnowboard.tShirtPicker;
 
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -17,6 +19,8 @@ public class Shirt {
 
     static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("F");
     static final long DEFAULT_DIFFERENCE = 7 * 24 * 60 * 60 * 1000; // A week
+    static ShirtsHelper shirtsHelper;
+    static SQLiteDatabase db;
     int id;
     String description;
     Date lastWorn;
@@ -41,9 +45,21 @@ public class Shirt {
             throw new Exception("Rating is not within range.");
         }
     }
-    public void wearToday()
-    {
+
+    public void wearToday() {
         this.lastWorn = new Date();
+        ContentValues newValues = new ContentValues();
+        newValues.put("date", this.lastWorn.getSeconds());
+        db.update(ShirtsHelper.DATABASE_NAME, newValues, "_id=?", new String[] {String.valueOf(this.id)});
     }
-    
+
+    public static void setDatabase(ShirtsHelper helper) {
+        shirtsHelper = helper;
+        db = shirtsHelper.getWritableDatabase();
+    }
+    @Override
+    public String toString()
+    {
+        return this.description;
+    }
 }

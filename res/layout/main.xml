@@ -8,33 +8,21 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
     >
-        <Button  
-            android:layout_width="wrap_content" 
-            android:layout_height="wrap_content" 
-            android:text="@string/pick_button_text"
-            android:layout_weight="1"
-        />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/add_button_text"
             android:layout_weight="1"
         />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/update_button_text"
+        <Button  
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:text="@string/pick_button_text"
             android:layout_weight="1"
         />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/delete_button_text"
-            android:layout_weight="1"
-        />
-
+       
     </LinearLayout>
     <ListView
         android:orientation="vertical"
