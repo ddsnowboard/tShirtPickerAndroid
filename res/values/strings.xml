@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">T-Shirt Picker</string>
-    <string name="pick_button_text">Pick Your Shirt</string>
+    <string name="pick_button_text">Pick Shirt</string>
+    <string name="add_button_text">Add Shirt</string>
+    <string name="update_button_text">Update Shirt</string>
+    <string name="delete_button_text">Delete Shirt</string>
 </resources>
