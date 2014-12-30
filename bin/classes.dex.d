@@ -1,5 +1,6 @@
 E:\Programming\tShirtPickerAndroid\bin\classes.dex : \
 E:\Programming\tShirtPickerAndroid\bin\classes\com\ddsnowboard\tShirtPicker\BuildConfig.class \
+E:\Programming\tShirtPickerAndroid\bin\classes\com\ddsnowboard\tShirtPicker\DatabaseService.class \
 E:\Programming\tShirtPickerAndroid\bin\classes\com\ddsnowboard\tShirtPicker\MainActivity.class \
 E:\Programming\tShirtPickerAndroid\bin\classes\com\ddsnowboard\tShirtPicker\R$attr.class \
 E:\Programming\tShirtPickerAndroid\bin\classes\com\ddsnowboard\tShirtPicker\R$id.class \

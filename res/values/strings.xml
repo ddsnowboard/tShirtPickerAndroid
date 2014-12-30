@@ -5,4 +5,7 @@
     <string name="add_button_text">Add Shirt</string>
     <string name="update_button_text">Update Shirt</string>
     <string name="delete_button_text">Delete Shirt</string>
+    <string name="database_service_name">.DatabaseService</string>
+    <string name="directive">DIRECTIVE</string>
+    <string name="fillList">FILL_LIST</string>
 </resources>
