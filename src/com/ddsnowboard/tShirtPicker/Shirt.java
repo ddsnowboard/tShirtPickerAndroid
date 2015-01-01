@@ -7,6 +7,7 @@ package com.ddsnowboard.tShirtPicker;
 
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -22,12 +23,13 @@ public class Shirt {
     static ShirtsHelper shirtsHelper;
     static SQLiteDatabase db;
     int id;
+    static final String TAG = "Shirt.class";
     String description;
     Date lastWorn;
     int rating;
     static final int PEAK_RATING = 5;
 
-    public Shirt(int id, String description, String lastWorn, int rating) throws ParseException, Exception {
+    public Shirt(int id, String description, String lastWorn, int rating, boolean inDB) {
         this.id = id;
         this.description = description;
         try {
@@ -36,30 +38,41 @@ public class Shirt {
             if (lastWorn.equals("")) {
                 this.lastWorn = new Date(new Date().getTime() - DEFAULT_DIFFERENCE);
             } else {
-                throw ex;
+                Log.e(TAG, "The date of "+this.description+" was unparseable");
             }
         }
         if (0 < rating && PEAK_RATING >= rating) {
             this.rating = rating;
         } else {
-            throw new Exception("Rating is not within range.");
+            Log.e(TAG, "The rating of " + this.description + " was out of range");
         }
+        if (!inDB) {
+            ContentValues values = new ContentValues();
+            values.put(ShirtsHelper.DESCRIPTION, this.description);
+            values.put(ShirtsHelper.DATE, this.lastWorn.getSeconds());
+            values.put(ShirtsHelper.RATING, this.rating);
+            db.insert(ShirtsHelper.DATABASE_NAME, null, values);
+        }
+    }
+
+    public Shirt(int id, String description, String lastWorn, int rating) throws Exception {
+        this(id, description, lastWorn, rating, true);
     }
 
     public void wearToday() {
         this.lastWorn = new Date();
         ContentValues newValues = new ContentValues();
         newValues.put("date", this.lastWorn.getSeconds());
-        db.update(ShirtsHelper.DATABASE_NAME, newValues, "_id=?", new String[] {String.valueOf(this.id)});
+        db.update(ShirtsHelper.DATABASE_NAME, newValues, "_id=?", new String[]{String.valueOf(this.id)});
     }
 
     public static void setDatabase(ShirtsHelper helper) {
         shirtsHelper = helper;
         db = shirtsHelper.getWritableDatabase();
     }
+
     @Override
-    public String toString()
-    {
+    public String toString() {
         return this.description;
     }
 }

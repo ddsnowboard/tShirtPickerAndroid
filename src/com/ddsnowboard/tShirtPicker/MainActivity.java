@@ -1,28 +1,35 @@
 package com.ddsnowboard.tShirtPicker;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class MainActivity extends Activity {
-//See if you can set up the database next time. 
 
     /**
      * Called when the activity is first created.
      *
      * @param savedInstanceState
      */
+    private static final String TAG = "MainActivity";
+    private static ArrayList<Shirt> shirts;
+    private ArrayAdapter<Shirt> adapter;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        ArrayList<Shirt> shirts = new ArrayList<Shirt>();
+        shirts = new ArrayList<Shirt>();
         ShirtsHelper helper = new ShirtsHelper(this);
+        helper.getWritableDatabase().delete(ShirtsHelper.DATABASE_NAME, null, null);
+        Shirt.setDatabase(helper);
         Cursor c = helper.selectAll();
         c.moveToFirst();
         String currDescription;
@@ -38,12 +45,17 @@ public class MainActivity extends Activity {
             try {
                 shirts.add(new Shirt(currId, currDescription, currDate, currRating));
             } catch (Exception ex) {
-                Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
+                Log.e(TAG, "There was an error parsing the date from a shirt.");
             }
             c.moveToNext();
         }
         ListView list = (ListView) findViewById(R.id.list);
-        ArrayAdapter<Shirt> adapter = new ArrayAdapter<Shirt>(this, android.R.layout.simple_list_item_1, android.R.id.text1, shirts);
+        adapter = new ArrayAdapter<Shirt>(this, android.R.layout.simple_list_item_1, android.R.id.text1, shirts);
         list.setAdapter(adapter);
+    }
+
+    public void addShirt(View v) {
+        Intent intent = new Intent(this, AddShirt.class);
+        startActivity(intent);
     }
 }

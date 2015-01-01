@@ -4,3 +4,6 @@
 # view AndroidManifest.xml #generated:7
 -keep class com.ddsnowboard.tShirtPicker.MainActivity { <init>(...); }
 
+# onClick res/layout/main.xml #generated:13
+-keepclassmembers class * { *** DEBUG_addShirt(...); }
+

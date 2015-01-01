@@ -13,11 +13,14 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/add_button"
             android:text="@string/add_button_text"
             android:layout_weight="1"
+            android:onClick="addShirt"
         />
         <Button  
             android:layout_width="wrap_content" 
+            android:id="@+id/pick_button"
             android:layout_height="wrap_content" 
             android:text="@string/pick_button_text"
             android:layout_weight="1"
