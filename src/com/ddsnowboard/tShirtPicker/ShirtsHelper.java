@@ -43,5 +43,4 @@ public class ShirtsHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         return db.query(DATABASE_NAME, null, null, null, null, null, "_id");
     }
-
 }

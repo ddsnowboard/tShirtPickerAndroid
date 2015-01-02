@@ -20,6 +20,7 @@ public class MainActivity extends Activity {
     private static final String TAG = "MainActivity";
     private static ArrayList<Shirt> shirts;
     private ArrayAdapter<Shirt> adapter;
+    private ShirtsHelper helper;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -27,8 +28,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.main);
         Star.retrieveImages(this);
         shirts = new ArrayList<Shirt>();
-        ShirtsHelper helper = new ShirtsHelper(this);
-        helper.getWritableDatabase().delete(ShirtsHelper.DATABASE_NAME, null, null);
+        helper = new ShirtsHelper(this);
         Shirt.setDatabase(helper);
         Cursor c = helper.selectAll();
         c.moveToFirst();
@@ -36,7 +36,6 @@ public class MainActivity extends Activity {
         String currDate;
         int currRating;
         int currId;
-        int DEBUG = c.getCount();
         while (!c.isAfterLast()) {
             currId = c.getInt(0);
             currDescription = c.getString(1);
@@ -57,5 +56,10 @@ public class MainActivity extends Activity {
     public void addShirt(View v) {
         Intent intent = new Intent(this, AddShirt.class);
         startActivity(intent);
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        this.shirts.add(new Shirt)
     }
 }

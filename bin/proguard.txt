@@ -7,6 +7,6 @@
 # onClick res/layout/main.xml #generated:13
 -keepclassmembers class * { *** addShirt(...); }
 
-# onClick res/layout/add_shirt.xml #generated:36
+# onClick res/layout/add_shirt.xml #generated:35
 -keepclassmembers class * { *** submit(...); }
 

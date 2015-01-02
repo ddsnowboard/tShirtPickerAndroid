@@ -8,6 +8,7 @@ package com.ddsnowboard.tShirtPicker;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
+import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -22,11 +23,21 @@ public class Star extends ImageView {
     public static Drawable filledStar;
     public static Drawable outlineStar;
     private boolean on;
+    private final int index;
+    private final RatingBox master;
 
-    public Star(Context ctx, RatingBox master, boolean on) {
+    public Star(Context ctx, RatingBox master, boolean on, int index) {
         super(ctx);
+        this.master = master;
+        this.index = index;
         this.setScaleType(ScaleType.FIT_XY);
         this.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT, 1.0f));
+        this.setOnClickListener(new OnClickListener() {
+
+            public void onClick(View view) {
+                ((Star) view).click();
+            }
+        });
         this.on = on;
         if (on) {
             this.setImageDrawable(filledStar);
@@ -57,6 +68,10 @@ public class Star extends ImageView {
     public void on() {
         this.on = true;
         this.setImageDrawable(filledStar);
+    }
+
+    public void click() {
+        this.master.click(this.index);
     }
 
     public static void retrieveImages(Context ctx) {

@@ -30,6 +30,7 @@ public class Shirt {
     static final int PEAK_RATING = 5;
 
     public Shirt(int id, String description, String lastWorn, int rating, boolean inDB) {
+        // IF NO NOT IN DB, TAKE A 0 ID AND PUT IN THE PROPER ONE. 
         this.id = id;
         this.description = description;
         try {
@@ -38,7 +39,7 @@ public class Shirt {
             if (lastWorn.equals("")) {
                 this.lastWorn = new Date(new Date().getTime() - DEFAULT_DIFFERENCE);
             } else {
-                Log.e(TAG, "The date of "+this.description+" was unparseable");
+                Log.e(TAG, "The date of " + this.description + " was unparseable");
             }
         }
         if (0 < rating && PEAK_RATING >= rating) {
@@ -57,6 +58,11 @@ public class Shirt {
 
     public Shirt(int id, String description, String lastWorn, int rating) throws Exception {
         this(id, description, lastWorn, rating, true);
+    }
+    public Shirt(int id, String description, Date lastWorn, int rating, boolean inDB)
+    {
+        this(id, description, "", rating, inDB);
+        this.lastWorn = lastWorn;
     }
 
     public void wearToday() {
