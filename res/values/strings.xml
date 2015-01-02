@@ -8,4 +8,9 @@
     <string name="database_service_name">.DatabaseService</string>
     <string name="directive">DIRECTIVE</string>
     <string name="fillList">FILL_LIST</string>
+    <string name="add_shirt_label">Add a Shirt</string>
+    <string name="description_text">Enter Description</string>
+    <string name="date_text">YYYY-MM-DD, or blank if unknown</string>
+    <string name="add_screen_button_text">Done</string>
+    <string name="rating_label">Rating:</string>
 </resources>

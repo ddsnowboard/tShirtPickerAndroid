@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 import java.util.ArrayList;
 
 public class MainActivity extends Activity {
@@ -26,6 +25,7 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        Star.retrieveImages(this);
         shirts = new ArrayList<Shirt>();
         ShirtsHelper helper = new ShirtsHelper(this);
         helper.getWritableDatabase().delete(ShirtsHelper.DATABASE_NAME, null, null);

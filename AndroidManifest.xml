@@ -11,7 +11,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name="@string/database_service_name"
+        <activity android:name="AddShirt"
+        android:label="@string/add_shirt_label"
         android:enabled="true"
         />
     </application>
