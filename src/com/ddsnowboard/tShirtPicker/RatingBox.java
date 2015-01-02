@@ -6,8 +6,6 @@
 package com.ddsnowboard.tShirtPicker;
 
 import android.content.Context;
-import android.util.AttributeSet;
-import android.view.View;
 import android.widget.LinearLayout;
 
 /**
@@ -26,7 +24,7 @@ public class RatingBox {
         this.context = context;
         this.master = master;
         for (int i = 0; i < NUM_OF_STARS; i++) {
-            this.stars[i] = new Star(this.context, false);
+            this.stars[i] = new Star(this.context, this, false);
             this.master.addView(this.stars[i]);
         }
         for (int i = 0; i < DEFAULT_STARS; i++) {

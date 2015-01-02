@@ -27,7 +27,6 @@
         android:layout_width="fill_parent"
     />
     <RatingBar
-        Snapple
         android:id="@+id/stars"
         android:orientation="horizontal"
         android:gravity="center"

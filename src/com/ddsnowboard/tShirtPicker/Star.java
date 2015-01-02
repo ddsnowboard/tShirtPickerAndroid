@@ -11,7 +11,6 @@ import android.graphics.drawable.Drawable;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RatingBar;
 
 /**
  *
@@ -24,7 +23,7 @@ public class Star extends ImageView {
     public static Drawable outlineStar;
     private boolean on;
 
-    public Star(Context ctx, RatingB boolean on) {
+    public Star(Context ctx, RatingBox master, boolean on) {
         super(ctx);
         this.setScaleType(ScaleType.FIT_XY);
         this.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT, 1.0f));
