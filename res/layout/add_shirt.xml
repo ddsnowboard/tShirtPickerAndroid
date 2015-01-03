@@ -6,7 +6,7 @@
     android:orientation="vertical">
     <EditText
         android:id="@+id/description"
-        android:inputType="text"
+        android:inputType="textCapSentences"
         android:hint="@string/description_text"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -38,6 +38,6 @@
         android:layout_width="wrap_content"
         android:text="@string/add_screen_button_text"
         android:layout_gravity="center"
-        android:onClick="submit"
+        android:onClick="checkBoxes"
     />
 </LinearLayout>

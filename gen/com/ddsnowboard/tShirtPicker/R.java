@@ -30,17 +30,22 @@ public final class R {
         public static final int main=0x7f030001;
     }
     public static final class string {
+        public static final int add=0x7f040010;
         public static final int add_button_text=0x7f040002;
         public static final int add_screen_button_text=0x7f04000b;
         public static final int add_shirt_label=0x7f040008;
         public static final int app_name=0x7f040000;
         public static final int database_service_name=0x7f040005;
+        public static final int date=0x7f04000e;
         public static final int date_text=0x7f04000a;
         public static final int delete_button_text=0x7f040004;
+        public static final int description=0x7f04000d;
         public static final int description_text=0x7f040009;
         public static final int directive=0x7f040006;
+        public static final int emptyDescriptionWarning=0x7f040011;
         public static final int fillList=0x7f040007;
         public static final int pick_button_text=0x7f040001;
+        public static final int rating=0x7f04000f;
         public static final int rating_label=0x7f04000c;
         public static final int update_button_text=0x7f040003;
     }

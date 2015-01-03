@@ -8,5 +8,5 @@
 -keepclassmembers class * { *** addShirt(...); }
 
 # onClick res/layout/add_shirt.xml #generated:35
--keepclassmembers class * { *** submit(...); }
+-keepclassmembers class * { *** checkBoxes(...); }
 

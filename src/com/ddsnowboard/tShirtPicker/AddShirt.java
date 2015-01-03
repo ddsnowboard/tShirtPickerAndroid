@@ -6,6 +6,8 @@
 package com.ddsnowboard.tShirtPicker;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -36,13 +38,37 @@ public class AddShirt extends Activity {
         this.dateBox = new DateBox(this, (LinearLayout) findViewById(R.id.last_worn));
     }
 
-    public void submit(View view) {
+    public void checkBoxes(View view) {
+        if (this.descriptionBox.length() == 0) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage(R.string.emptyDescriptionWarning);
+            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+
+                public void onClick(DialogInterface arg0, int arg1) {
+                    submit();
+                }
+            });
+            builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+
+                public void onClick(DialogInterface arg0, int arg1) {
+                    arg0.dismiss();
+                }
+            });
+            builder.create().show();
+        } else {
+            submit();
+        }
+    }
+
+    public void submit() {
         Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra(R.string.date, this.dateBox.getText());
-        intent.putExtra(R.string.description, this.descriptionBox.getText());
-        intent.putExtra(R.string.rating, this.ratingBox.get());
-        intent.putExtra(R.string.directive, R.string.add);
+        intent.putExtra(this.getString(R.string.date), this.dateBox.getText());
+        intent.putExtra(this.getString(R.string.description), this.descriptionBox.getText().toString());
+        intent.putExtra(this.getString(R.string.rating), this.ratingBox.get());
+        intent.putExtra(this.getString(R.string.directive), this.getString(R.string.add));
+        intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
+        this.finish();
     }
 }

@@ -60,6 +60,7 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onNewIntent(Intent intent) {
-        this.shirts.add(new Shirt)
+        MainActivity.shirts.add(new Shirt(0, intent.getStringExtra(this.getString(R.string.description)), intent.getStringExtra(this.getString(R.string.date)), intent.getIntExtra(this.getString(R.string.rating), 3), false));
+        this.adapter.notifyDataSetChanged();
     }
 }

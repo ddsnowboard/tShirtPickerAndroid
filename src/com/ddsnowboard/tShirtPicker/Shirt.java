@@ -6,6 +6,8 @@
 package com.ddsnowboard.tShirtPicker;
 
 import android.content.ContentValues;
+import android.database.Cursor;
+import android.database.CursorIndexOutOfBoundsException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import java.text.ParseException;
@@ -30,9 +32,9 @@ public class Shirt {
     static final int PEAK_RATING = 5;
 
     public Shirt(int id, String description, String lastWorn, int rating, boolean inDB) {
-        // IF NO NOT IN DB, TAKE A 0 ID AND PUT IN THE PROPER ONE. 
-        this.id = id;
+        // IF NO NOT IN DB, TAKE A 0 ID AND PUT IN THE PROPER ONE.
         this.description = description;
+        this.id = id;
         try {
             this.lastWorn = DATE_FORMAT.parse(lastWorn);
         } catch (ParseException ex) {
@@ -48,6 +50,15 @@ public class Shirt {
             Log.e(TAG, "The rating of " + this.description + " was out of range");
         }
         if (!inDB) {
+            if (this.id == 0) {
+                Cursor c = shirtsHelper.selectAll();
+                c.moveToLast();
+                try {
+                    this.id = c.getInt(0) + 1;
+                } catch (CursorIndexOutOfBoundsException ex) {
+                    this.id = 1;
+                }
+            }
             ContentValues values = new ContentValues();
             values.put(ShirtsHelper.DESCRIPTION, this.description);
             values.put(ShirtsHelper.DATE, this.lastWorn.getSeconds());
@@ -59,8 +70,8 @@ public class Shirt {
     public Shirt(int id, String description, String lastWorn, int rating) throws Exception {
         this(id, description, lastWorn, rating, true);
     }
-    public Shirt(int id, String description, Date lastWorn, int rating, boolean inDB)
-    {
+
+    public Shirt(int id, String description, Date lastWorn, int rating, boolean inDB) {
         this(id, description, "", rating, inDB);
         this.lastWorn = lastWorn;
     }
