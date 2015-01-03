@@ -42,7 +42,7 @@ public class AddShirt extends Activity {
         intent.putExtra(R.string.description, this.descriptionBox.getText());
         intent.putExtra(R.string.rating, this.ratingBox.get());
         intent.putExtra(R.string.directive, R.string.add);
-        intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 }
