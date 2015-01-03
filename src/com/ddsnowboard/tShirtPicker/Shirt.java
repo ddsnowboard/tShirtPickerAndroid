@@ -32,7 +32,6 @@ public class Shirt {
     static final int PEAK_RATING = 5;
 
     public Shirt(int id, String description, String lastWorn, int rating, boolean inDB) {
-        // IF NO NOT IN DB, TAKE A 0 ID AND PUT IN THE PROPER ONE.
         this.description = description;
         this.id = id;
         try {
