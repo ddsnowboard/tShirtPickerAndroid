@@ -6,6 +6,10 @@ android {
 
     defaultConfig {
         applicationId "com.ddsnowboard.tShirtPicker"
+        minSdkVersion 10
+        targetSdkVersion 10
+        versionCode 1
+        versionName "1.0"
     }
 
     buildTypes {
