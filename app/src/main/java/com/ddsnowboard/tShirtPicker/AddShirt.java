@@ -15,7 +15,6 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 
 /**
- *
  * @author ddsnowboard
  */
 public class AddShirt extends Activity {
@@ -23,7 +22,6 @@ public class AddShirt extends Activity {
     /**
      * Called when the activity is first created.
      *
-     * @param icicle
      */
     private RatingBox ratingBox;
     private DateBox dateBox;

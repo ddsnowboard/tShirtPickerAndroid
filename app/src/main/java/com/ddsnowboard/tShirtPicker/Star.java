@@ -14,7 +14,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 /**
- *
  * @author ddsnowboard
  */
 public class Star extends ImageView {

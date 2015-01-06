@@ -11,7 +11,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 /**
- *
  * @author ddsnowboard
  */
 public class ShirtsHelper extends SQLiteOpenHelper {

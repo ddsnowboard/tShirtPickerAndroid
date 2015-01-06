@@ -11,12 +11,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- *
  * @author ddsnowboard
  */
 public class TodayButton extends Button {
@@ -24,7 +23,8 @@ public class TodayButton extends Button {
     private final EditText box;
     private final Context context;
     private static final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-    public TodayButton(Context context, final EditText box){
+
+    public TodayButton(Context context, final EditText box) {
         super(context);
         this.context = context;
         this.box = box;
@@ -38,5 +38,5 @@ public class TodayButton extends Button {
             }
         });
     }
-    
+
 }

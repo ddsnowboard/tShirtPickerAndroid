@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
 import java.util.ArrayList;
 
 public class MainActivity extends Activity {
@@ -15,7 +16,6 @@ public class MainActivity extends Activity {
     /**
      * Called when the activity is first created.
      *
-     * @param savedInstanceState
      */
     private static final String TAG = "MainActivity";
     private static ArrayList<Shirt> shirts;

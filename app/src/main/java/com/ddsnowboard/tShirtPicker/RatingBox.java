@@ -9,7 +9,6 @@ import android.content.Context;
 import android.widget.LinearLayout;
 
 /**
- *
  * @author ddsnowboard
  */
 public class RatingBox {
@@ -36,8 +35,8 @@ public class RatingBox {
     }
 
     public void click(int n) {
-        for (int i = 0; i < stars.length; i++) {
-            this.stars[i].off();
+        for (Star star : stars) {
+            star.off();
         }
         for (int i = 0; i <= n; i++) {
             this.stars[i].on();
