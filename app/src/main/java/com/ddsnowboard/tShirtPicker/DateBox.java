@@ -92,6 +92,7 @@ public class DateBox {
     }
 
     public boolean isComplaining() {
+
         return this.complaining;
     }
 
@@ -102,6 +103,10 @@ public class DateBox {
             Log.e(TAG, "There was a problem parsing");
             return new Date();
         }
+    }
+
+    public void setDate(Date date) {
+        this.box.setText(format.format(date));
     }
 
     public String getText() {

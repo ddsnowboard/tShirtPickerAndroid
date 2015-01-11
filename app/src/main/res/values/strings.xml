@@ -18,4 +18,7 @@
     <string name="rating">RATING</string>
     <string name="add">ADD</string>
     <string name="emptyDescriptionWarning">Your description is empty. Are you sure you want to create this shirt?</string>
+    <string name="filled">FILLED?</string>
+    <string name="index">INDEX</string>
+    <string name="edit">EDIT</string>
 </resources>

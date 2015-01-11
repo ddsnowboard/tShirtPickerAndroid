@@ -14,8 +14,11 @@
     <string name="description">DESCRIPTION</string>
     <string name="description_text">Enter Description</string>
     <string name="directive">DIRECTIVE</string>
+    <string name="edit">EDIT</string>
     <string name="emptyDescriptionWarning">Your description is empty. Are you sure you want to create this shirt?</string>
     <string name="fillList">FILL_LIST</string>
+    <string name="filled">FILLED?</string>
+    <string name="index">INDEX</string>
     <string name="pick_button_text">Pick Shirt</string>
     <string name="rating">RATING</string>
     <string name="rating_label">Rating:</string>

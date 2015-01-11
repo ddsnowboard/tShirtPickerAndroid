@@ -35,17 +35,22 @@ public class RatingBox {
     }
 
     public void click(int n) {
-        for (Star star : stars) {
-            star.off();
+        if (n <= NUM_OF_STARS) {
+            for (Star star : stars) {
+                star.off();
+            }
+            for (int i = 0; i <= n; i++) {
+                this.stars[i].on();
+            }
+            this.number = n;
         }
-        for (int i = 0; i <= n; i++) {
-            this.stars[i].on();
-        }
-        this.number = n;
     }
 
     public int get() {
         return this.number + 1;
     }
 
+    public void setRating(int rating) {
+        click(rating - 1);
+    }
 }

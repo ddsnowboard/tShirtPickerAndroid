@@ -6,6 +6,7 @@
 package com.ddsnowboard.tShirtPicker;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.CursorIndexOutOfBoundsException;
 import android.database.sqlite.SQLiteDatabase;
@@ -20,10 +21,11 @@ import java.util.Date;
  */
 public class Shirt {
 
-    static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("F");
+    static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
     static final long DEFAULT_DIFFERENCE = 7 * 24 * 60 * 60 * 1000; // A week
     static ShirtsHelper shirtsHelper;
     static SQLiteDatabase db;
+    static Context CONTEXT;
     int id;
     static final String TAG = "Shirt.class";
     String description;
@@ -60,7 +62,7 @@ public class Shirt {
             }
             ContentValues values = new ContentValues();
             values.put(ShirtsHelper.DESCRIPTION, this.description);
-            values.put(ShirtsHelper.DATE, this.lastWorn.getSeconds());
+            values.put(ShirtsHelper.DATE, this.lastWorn.getTime());
             values.put(ShirtsHelper.RATING, this.rating);
             db.insert(ShirtsHelper.DATABASE_NAME, null, values);
         }
@@ -75,10 +77,25 @@ public class Shirt {
         this.lastWorn = lastWorn;
     }
 
+    public void edit(String description, String lastWorn, int rating) {
+        this.description = description;
+        try {
+            this.lastWorn = DATE_FORMAT.parse(lastWorn);
+        } catch (ParseException e) {
+            Log.e(TAG, "The date of " + this.description + " was unparseable");
+        }
+        this.rating = rating;
+        ContentValues cv = new ContentValues();
+        cv.put(ShirtsHelper.DESCRIPTION, this.description);
+        cv.put(ShirtsHelper.DATE, this.lastWorn.getSeconds());
+        cv.put(ShirtsHelper.RATING, this.rating);
+        db.update(ShirtsHelper.DATABASE_NAME, cv, "_id=?", new String[]{String.valueOf(this.id)});
+    }
+
     public void wearToday() {
         this.lastWorn = new Date();
         ContentValues newValues = new ContentValues();
-        newValues.put("date", this.lastWorn.getSeconds());
+        newValues.put(ShirtsHelper.DATE, this.lastWorn.getSeconds());
         db.update(ShirtsHelper.DATABASE_NAME, newValues, "_id=?", new String[]{String.valueOf(this.id)});
     }
 
@@ -87,8 +104,13 @@ public class Shirt {
         db = shirtsHelper.getWritableDatabase();
     }
 
+    public static void setContext(Context ctx) {
+        CONTEXT = ctx;
+    }
+
     @Override
     public String toString() {
         return this.description;
     }
+
 }
