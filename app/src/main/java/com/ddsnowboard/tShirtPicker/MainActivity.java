@@ -10,7 +10,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 
 ;
@@ -38,16 +40,15 @@ public class MainActivity extends Activity {
         Cursor c = helper.selectAll();
         c.moveToFirst();
         String currDescription;
-        int currDate;
+        long currDate;
         int currRating;
         int currId;
         while (!c.isAfterLast()) {
             currId = c.getInt(0);
             currDescription = c.getString(1);
-            currDate = c.getInt(2);
+            currDate = c.getLong(2);
             currRating = c.getInt(3);
             try {
-                // Log out the dates; I think there might be an issue with it. 
                 shirts.add(new Shirt(currId, currDescription, new Date(currDate), currRating, true));
             } catch (Exception ex) {
                 Log.e(TAG, "There was an error parsing the date from a shirt.");
