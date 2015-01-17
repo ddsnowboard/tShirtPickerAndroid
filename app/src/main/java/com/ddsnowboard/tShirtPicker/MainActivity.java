@@ -47,6 +47,7 @@ public class MainActivity extends Activity {
             currDate = c.getInt(2);
             currRating = c.getInt(3);
             try {
+                // Log out the dates; I think there might be an issue with it. 
                 shirts.add(new Shirt(currId, currDescription, new Date(currDate), currRating, true));
             } catch (Exception ex) {
                 Log.e(TAG, "There was an error parsing the date from a shirt.");
