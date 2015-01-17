@@ -87,7 +87,7 @@ public class Shirt {
         this.rating = rating;
         ContentValues cv = new ContentValues();
         cv.put(ShirtsHelper.DESCRIPTION, this.description);
-        cv.put(ShirtsHelper.DATE, this.lastWorn.getSeconds());
+        cv.put(ShirtsHelper.DATE, this.lastWorn.getTime());
         cv.put(ShirtsHelper.RATING, this.rating);
         db.update(ShirtsHelper.DATABASE_NAME, cv, "_id=?", new String[]{String.valueOf(this.id)});
     }
@@ -98,7 +98,10 @@ public class Shirt {
         newValues.put(ShirtsHelper.DATE, this.lastWorn.getSeconds());
         db.update(ShirtsHelper.DATABASE_NAME, newValues, "_id=?", new String[]{String.valueOf(this.id)});
     }
+public void delete(){
+   db.delete(shirtsHelper.DATABASE_NAME, "_id = ?", new String[] {String.valueOf(this.id)});
 
+}
     public static void setDatabase(ShirtsHelper helper) {
         shirtsHelper = helper;
         db = shirtsHelper.getWritableDatabase();

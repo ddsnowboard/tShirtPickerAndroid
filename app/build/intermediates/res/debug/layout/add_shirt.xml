@@ -6,37 +6,49 @@
 
     <EditText
         android:id="@+id/description"
-        android:inputType="textCapSentences"
-        android:hint="@string/description_text"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="10dp"
+        android:hint="@string/description_text"
+        android:inputType="textCapSentences" />
 
     <LinearLayout
         android:id="@+id/last_worn"
-        android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical" />
 
     <TextView
-        android:text="@string/rating_label"
-        android:gravity="center"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_width="fill_parent" />
+        android:gravity="center"
+        android:text="@string/rating_label" />
 
     <LinearLayout
         android:id="@+id/stars"
-        android:orientation="horizontal"
-        android:gravity="center"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_width="fill_parent" />
+        android:gravity="center"
+        android:orientation="horizontal" />
+
+    <Button
+        android:id="@+id/delete_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:onClick="deleteShirt"
+        android:paddingBottom="12dp"
+        android:paddingTop="10dp"
+        android:text="@string/delete_button_text"
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/add_screen_button"
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="@string/add_screen_button_text"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:onClick="checkBoxes" />
+        android:onClick="checkBoxes"
+        android:text="@string/add_screen_button_text" />
 </LinearLayout><!-- From: file:/E:/Programming/tShirtPickerAndroid/app/src/main/res/layout/add_shirt.xml -->

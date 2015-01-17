@@ -2,6 +2,7 @@
 <resources>
     <!-- From: file:/E:/Programming/tShirtPickerAndroid/app/src/main/res/values/strings.xml -->
     <eat-comment/>
+    <color name="red">#FF0000</color>
     <string name="add">ADD</string>
     <string name="add_button_text">Add Shirt</string>
     <string name="add_screen_button_text">Done</string>
