@@ -26,14 +26,14 @@ import java.util.Date;
  */
 public class DateBox {
 
+    private static final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+    private final static String TAG = "DateBox";
     private final LinearLayout master;
     private final EditText box;
     private final TextView complaint;
     private final Context context;
-    private static final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-    private boolean complaining;
-    private final static String TAG = "DateBox";
     private final LinearLayout frame;
+    private boolean complaining;
     private TodayButton todayButton;
 
     public DateBox(Context ctx, LinearLayout master) {

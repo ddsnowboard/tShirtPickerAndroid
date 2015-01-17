@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +23,7 @@ import android.widget.LinearLayout;
  */
 public class AddShirt extends Activity {
 
+    private static final String TAG = "AddShirt";
     /**
      * Called when the activity is first created.
      */
@@ -32,7 +34,6 @@ public class AddShirt extends Activity {
     private boolean creating;
     private Shirt curr;
     private Button deleteButton;
-    private static final String TAG = "AddShirt";
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -91,12 +92,25 @@ public class AddShirt extends Activity {
         sendToMain();
     }
 
-    public void deleteShirt(View view) {
+    public void askDeleteShirt(View view) {
         if (curr != null) {
-            curr.delete();
-            MainActivity.shirts.remove(intent.getIntExtra(getString(R.string.index), -1));
-            sendToMain();
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage(R.string.delete_question);
+            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    deleteShirt();
+                }
+            });
+            builder.setNegativeButton("No", null);
+            builder.create().show();
         }
+    }
+
+    public void deleteShirt() {
+        curr.delete();
+        MainActivity.shirts.remove(intent.getIntExtra(getString(R.string.index), -1));
+        sendToMain();
     }
 
     private void sendToMain() {

@@ -43,17 +43,18 @@ public final class R {
         public static final int date=0x7f050006;
         public static final int date_text=0x7f050007;
         public static final int delete_button_text=0x7f050008;
-        public static final int description=0x7f050009;
-        public static final int description_text=0x7f05000a;
-        public static final int directive=0x7f05000b;
-        public static final int edit=0x7f05000c;
-        public static final int emptyDescriptionWarning=0x7f05000d;
-        public static final int fillList=0x7f05000e;
-        public static final int filled=0x7f05000f;
-        public static final int index=0x7f050010;
-        public static final int pick_button_text=0x7f050011;
-        public static final int rating=0x7f050012;
-        public static final int rating_label=0x7f050013;
-        public static final int update_button_text=0x7f050014;
+        public static final int delete_question=0x7f050009;
+        public static final int description=0x7f05000a;
+        public static final int description_text=0x7f05000b;
+        public static final int directive=0x7f05000c;
+        public static final int edit=0x7f05000d;
+        public static final int emptyDescriptionWarning=0x7f05000e;
+        public static final int fillList=0x7f05000f;
+        public static final int filled=0x7f050010;
+        public static final int index=0x7f050011;
+        public static final int pick_button_text=0x7f050012;
+        public static final int rating=0x7f050013;
+        public static final int rating_label=0x7f050014;
+        public static final int update_button_text=0x7f050015;
     }
 }

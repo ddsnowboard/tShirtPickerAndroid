@@ -20,9 +20,9 @@ import java.util.Date;
  */
 public class TodayButton extends Button {
 
+    private static final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
     private final EditText box;
     private final Context context;
-    private static final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
     public TodayButton(Context context, final EditText box) {
         super(context);

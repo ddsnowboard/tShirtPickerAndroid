@@ -16,8 +16,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class ShirtsHelper extends SQLiteOpenHelper {
 
     public final static String DATABASE_NAME = "shirts";
-    public final static int DATABASE_VERSION = 1;
     public final static String DATABASE_CREATE = "create table " + DATABASE_NAME + " (_id integer primary key autoincrement, description text, date integer, rating integer not null)";
+    public final static int DATABASE_VERSION = 1;
     public final static String DESCRIPTION = "description";
     public final static String DATE = "date";
     public final static String RATING = "rating";

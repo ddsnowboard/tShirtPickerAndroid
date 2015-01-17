@@ -12,6 +12,7 @@
     <string name="date">DATE</string>
     <string name="date_text">YYYY-MM-DD, or blank if unknown</string>
     <string name="delete_button_text">Delete Shirt</string>
+    <string name="delete_question">Are you sure you want to delete this shirt?</string>
     <string name="description">DESCRIPTION</string>
     <string name="description_text">Enter Description</string>
     <string name="directive">DIRECTIVE</string>

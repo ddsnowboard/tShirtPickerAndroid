@@ -23,15 +23,15 @@ public class Shirt {
 
     static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
     static final long DEFAULT_DIFFERENCE = 7 * 24 * 60 * 60 * 1000; // A week
+    static final String TAG = "Shirt.class";
+    static final int PEAK_RATING = 5;
     static ShirtsHelper shirtsHelper;
     static SQLiteDatabase db;
     static Context CONTEXT;
     int id;
-    static final String TAG = "Shirt.class";
     String description;
     Date lastWorn;
     int rating;
-    static final int PEAK_RATING = 5;
 
     public Shirt(int id, String description, String lastWorn, int rating, boolean inDB) {
         this.description = description;
@@ -77,6 +77,15 @@ public class Shirt {
         this.lastWorn = lastWorn;
     }
 
+    public static void setDatabase(ShirtsHelper helper) {
+        shirtsHelper = helper;
+        db = shirtsHelper.getWritableDatabase();
+    }
+
+    public static void setContext(Context ctx) {
+        CONTEXT = ctx;
+    }
+
     public void edit(String description, String lastWorn, int rating) {
         this.description = description;
         try {
@@ -98,17 +107,10 @@ public class Shirt {
         newValues.put(ShirtsHelper.DATE, this.lastWorn.getSeconds());
         db.update(ShirtsHelper.DATABASE_NAME, newValues, "_id=?", new String[]{String.valueOf(this.id)});
     }
-public void delete(){
-   db.delete(shirtsHelper.DATABASE_NAME, "_id = ?", new String[] {String.valueOf(this.id)});
 
-}
-    public static void setDatabase(ShirtsHelper helper) {
-        shirtsHelper = helper;
-        db = shirtsHelper.getWritableDatabase();
-    }
+    public void delete() {
+        db.delete(shirtsHelper.DATABASE_NAME, "_id = ?", new String[]{String.valueOf(this.id)});
 
-    public static void setContext(Context ctx) {
-        CONTEXT = ctx;
     }
 
     @Override

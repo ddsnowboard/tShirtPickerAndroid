@@ -21,9 +21,9 @@ public class Star extends ImageView {
     public static Resources res;
     public static Drawable filledStar;
     public static Drawable outlineStar;
-    private boolean on;
     private final int index;
     private final RatingBox master;
+    private boolean on;
 
     public Star(Context ctx, RatingBox master, boolean on, int index) {
         super(ctx);
@@ -43,6 +43,12 @@ public class Star extends ImageView {
         } else {
             this.setImageDrawable(outlineStar);
         }
+    }
+
+    public static void retrieveImages(Context ctx) {
+        res = ctx.getResources();
+        filledStar = res.getDrawable(R.drawable.filled_star);
+        outlineStar = res.getDrawable(R.drawable.outline_star);
     }
 
     public boolean isOn() {
@@ -71,11 +77,5 @@ public class Star extends ImageView {
 
     public void click() {
         this.master.click(this.index);
-    }
-
-    public static void retrieveImages(Context ctx) {
-        res = ctx.getResources();
-        filledStar = res.getDrawable(R.drawable.filled_star);
-        outlineStar = res.getDrawable(R.drawable.outline_star);
     }
 }
