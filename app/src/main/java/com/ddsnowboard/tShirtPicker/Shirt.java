@@ -25,6 +25,7 @@ public class Shirt {
     static final long DEFAULT_DIFFERENCE = 7 * 24 * 60 * 60 * 1000; // A week
     static final String TAG = "Shirt.class";
     static final int PEAK_RATING = 5;
+    private static final long MS_IN_DAY = 86400000;
     static ShirtsHelper shirtsHelper;
     static SQLiteDatabase db;
     static Context CONTEXT;
@@ -111,6 +112,12 @@ public class Shirt {
     public void delete() {
         db.delete(shirtsHelper.DATABASE_NAME, "_id = ?", new String[]{String.valueOf(this.id)});
 
+    }
+
+    public int daysAgoWorn() {
+        int out = 0;
+        out = (int)((new Date().getTime() - this.lastWorn.getTime()) / MS_IN_DAY);
+        return out;
     }
 
     @Override

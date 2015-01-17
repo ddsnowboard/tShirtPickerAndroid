@@ -10,12 +10,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 
-;
 
 public class MainActivity extends Activity {
 
@@ -73,6 +70,14 @@ public class MainActivity extends Activity {
         Intent intent = new Intent(this, AddShirt.class);
         intent.putExtra(getApplicationContext().getString(R.string.filled), false);
         startActivity(intent);
+    }
+
+    public void pickShirt(View v) {
+        ArrayList<Shirt> weightedList = new ArrayList<Shirt>();
+/*
+Add shirt to weightedList daysAgoWorn() * rating times, and then pick one at random. Maybe you could tweak
+the algorithm, but that will be fine for now.
+*/
     }
 
     @Override
