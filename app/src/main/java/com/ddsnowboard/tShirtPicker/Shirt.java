@@ -105,7 +105,7 @@ public class Shirt {
     public void wearToday() {
         this.lastWorn = new Date();
         ContentValues newValues = new ContentValues();
-        newValues.put(ShirtsHelper.DATE, this.lastWorn.getSeconds());
+        newValues.put(ShirtsHelper.DATE, this.lastWorn.getTime());
         db.update(ShirtsHelper.DATABASE_NAME, newValues, "_id=?", new String[]{String.valueOf(this.id)});
     }
 
