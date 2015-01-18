@@ -2,6 +2,10 @@
 <resources>
     <!-- From: file:/E:/Programming/tShirtPickerAndroid/app/src/main/res/values/strings.xml -->
     <eat-comment/>
+    <string-array name="pick_shirt_message">
+        <item>"Are you sure you want to wear \""</item>
+        <item>"\" today?"</item>
+    </string-array>
     <color name="red">#FF0000</color>
     <string name="add">ADD</string>
     <string name="add_button_text">Add Shirt</string>

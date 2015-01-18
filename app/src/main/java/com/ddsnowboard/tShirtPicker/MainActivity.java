@@ -1,6 +1,8 @@
 package com.ddsnowboard.tShirtPicker;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -12,6 +14,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Random;
 
 
 public class MainActivity extends Activity {
@@ -73,11 +76,26 @@ public class MainActivity extends Activity {
     }
 
     public void pickShirt(View v) {
+        if (MainActivity.shirts.isEmpty()) {
+            Log.e(TAG, "Its empty");
+            return;
+        }
         ArrayList<Shirt> weightedList = new ArrayList<Shirt>();
-/*
-Add shirt to weightedList daysAgoWorn() * rating times, and then pick one at random. Maybe you could tweak
-the algorithm, but that will be fine for now.
-*/
+        for (Shirt s : MainActivity.shirts)
+            for (int i = 0; i < s.daysAgoWorn() * s.rating; ++i)
+                weightedList.add(s);
+        final Shirt choice = weightedList.get(new Random().nextInt(weightedList.size()));
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        String[] sides = getResources().getStringArray(R.array.pick_shirt_message);
+        builder.setMessage(sides[0] + choice.description + sides[1]);
+        builder.setNegativeButton("No", null);
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                choice.wearToday();
+            }
+        });
+        builder.create().show();
     }
 
     @Override
@@ -87,6 +105,12 @@ the algorithm, but that will be fine for now.
         } else if (intent.getStringExtra(getString(R.string.directive)).equals(getString(R.string.edit))) {
             this.adapter.notifyDataSetChanged();
         }
+    }
+    private void blinkListItem(int i)
+    {
+        // Make this make the item blink or change color or something. It isn't as satisfying as it should
+        // be. It feels weak and I don't know that I've done something. How to do this, that's another
+//        issue entirely.
     }
 
     private void DEBUG_CLEAR() {

@@ -31,9 +31,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5828009a-9af6-43e5-834d-70813917d32e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/AddShirt.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/AddShirt.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/Shirt.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/Shirt.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/ddsnowboard/tShirtPicker/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/ddsnowboard/tShirtPicker/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tShirtPickerAndroid.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,22 +58,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AddShirt.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/AddShirt.java">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1197411" vertical-offset="753" max-vertical-offset="1989">
-              <caret line="57" column="54" selection-start-line="57" selection-start-column="54" selection-end-line="57" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.79783785" vertical-offset="1115" max-vertical-offset="2074">
+              <caret line="112" column="5" selection-start-line="112" selection-start-column="5" selection-end-line="112" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1522#1548#0" expanded="true" />
-                <element signature="e#1645#1670#0" expanded="true" />
-                <element signature="e#2092#2124#0" expanded="true" />
-                <element signature="e#3552#3576#0" expanded="true" />
-                <element signature="e#3624#3834#0" expanded="true" />
-                <element signature="e#3819#3820#0" expanded="true" />
-                <element signature="e#4051#4076#0" expanded="true" />
-                <element signature="e#4247#4276#0" expanded="true" />
-                <element signature="e#4278#4302#0" expanded="true" />
+                <element signature="e#2898#2905#0" expanded="true" />
+                <element signature="e#3456#3651#0" expanded="true" />
+                <element signature="e#3640#3641#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1025,9 +1021,10 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/DeleteButton.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/add_shirt.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/DeleteDialog.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/AddShirt.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/Shirt.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/MainActivity.java" />
       </list>
     </option>
@@ -1088,6 +1085,9 @@
     <panes>
       <pane id="Scope">
         <subPane subId="Project Files" />
+      </pane>
+      <pane id="PackagesPane">
+        <subPane />
       </pane>
       <pane id="AndroidView">
         <subPane />
@@ -1282,9 +1282,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane />
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1309,6 +1306,7 @@
     <property name="LayoutCode.rearrangeEntries" value="false" />
     <property name="FullScreen" value="false" />
     <property name="LayoutCode.rearrangeEntriesJava" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="str&#9;FILE&#9;file://E:/Programming/tShirtPickerAndroid/app/src/main/res/values/strings.xml&#10;main&#9;PSI&#9;JAVA://com.ddsnowboard.tShirtPicker.MainActivity&#10;string&#9;FILE&#9;file://E:/Programming/tShirtPickerAndroid/app/src/main/res/values/strings.xml" />
   </component>
   <component name="RunManager" selected="Android Application.app">
     <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
@@ -1519,7 +1517,6 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962668" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296355" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1527,7 +1524,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13383637" sideWeight="0.5005258" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22187005" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24643423" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24643423" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962668" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980143" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1541,6 +1538,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296355" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39936608" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1566,22 +1564,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="459">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/DateBox.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="1989">
@@ -1618,15 +1600,6 @@
           <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1522#1548#0" expanded="true" />
-            <element signature="e#1645#1670#0" expanded="true" />
-            <element signature="e#2092#2124#0" expanded="true" />
-            <element signature="e#3552#3576#0" expanded="true" />
-            <element signature="e#3624#3834#0" expanded="true" />
-            <element signature="e#3819#3820#0" expanded="true" />
-            <element signature="e#4051#4076#0" expanded="true" />
-            <element signature="e#4247#4276#0" expanded="true" />
-            <element signature="e#4278#4302#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1691,15 +1664,6 @@
           <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1522#1548#0" expanded="true" />
-            <element signature="e#1645#1670#0" expanded="true" />
-            <element signature="e#2092#2124#0" expanded="true" />
-            <element signature="e#3552#3576#0" expanded="true" />
-            <element signature="e#3624#3834#0" expanded="true" />
-            <element signature="e#3819#3820#0" expanded="true" />
-            <element signature="e#4051#4076#0" expanded="true" />
-            <element signature="e#4247#4276#0" expanded="true" />
-            <element signature="e#4278#4302#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1764,15 +1728,6 @@
           <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1522#1548#0" expanded="true" />
-            <element signature="e#1645#1670#0" expanded="true" />
-            <element signature="e#2092#2124#0" expanded="true" />
-            <element signature="e#3552#3576#0" expanded="true" />
-            <element signature="e#3624#3834#0" expanded="true" />
-            <element signature="e#3819#3820#0" expanded="true" />
-            <element signature="e#4051#4076#0" expanded="true" />
-            <element signature="e#4247#4276#0" expanded="true" />
-            <element signature="e#4278#4302#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1921,7 +1876,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0627027" vertical-offset="231" max-vertical-offset="1156">
           <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1933,17 +1887,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/add_shirt.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6176714" vertical-offset="0" max-vertical-offset="1211">
-          <caret line="44" column="32" selection-start-line="44" selection-start-column="32" selection-end-line="44" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/ShirtsHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.31243244" vertical-offset="0" max-vertical-offset="925">
@@ -1952,19 +1895,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45333335" vertical-offset="0" max-vertical-offset="900">
-          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../AndroidSDK/SDK/platforms/android-10/android.jar!/android/database/Cursor.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33297297" vertical-offset="508" max-vertical-offset="1479">
           <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1976,34 +1910,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/AddShirt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76618123" vertical-offset="413" max-vertical-offset="1717">
-          <caret line="80" column="4" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.23381877" vertical-offset="0" max-vertical-offset="1938">
+          <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1896#2375#0" expanded="true" />
-            <element signature="e#2364#2365#0" expanded="true" />
-            <element signature="e#2689#2696#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/AddShirt.java">
+    <entry file="jar://$PROJECT_DIR$/../AndroidSDK/SDK/platforms/android-10/android.jar!/java/util/Random.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1197411" vertical-offset="753" max-vertical-offset="1989">
-          <caret line="57" column="54" selection-start-line="57" selection-start-column="54" selection-end-line="57" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.33009708" vertical-offset="0" max-vertical-offset="1236">
+          <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/add_shirt.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-25.8" vertical-offset="103" max-vertical-offset="1003">
+          <caret line="44" column="32" selection-start-line="44" selection-start-column="32" selection-end-line="44" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.4" vertical-offset="0" max-vertical-offset="612">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.79783785" vertical-offset="1115" max-vertical-offset="2074">
+          <caret line="112" column="5" selection-start-line="112" selection-start-column="5" selection-end-line="112" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1522#1548#0" expanded="true" />
-            <element signature="e#1645#1670#0" expanded="true" />
-            <element signature="e#2092#2124#0" expanded="true" />
-            <element signature="e#3552#3576#0" expanded="true" />
-            <element signature="e#3624#3834#0" expanded="true" />
-            <element signature="e#3819#3820#0" expanded="true" />
-            <element signature="e#4051#4076#0" expanded="true" />
-            <element signature="e#4247#4276#0" expanded="true" />
-            <element signature="e#4278#4302#0" expanded="true" />
+            <element signature="e#2898#2905#0" expanded="true" />
+            <element signature="e#3456#3651#0" expanded="true" />
+            <element signature="e#3640#3641#0" expanded="true" />
           </folding>
         </state>
       </provider>
