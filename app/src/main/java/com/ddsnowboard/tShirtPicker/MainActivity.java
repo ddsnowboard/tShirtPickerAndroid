@@ -5,7 +5,9 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -26,6 +28,7 @@ public class MainActivity extends Activity {
     public static ArrayList<Shirt> shirts;
     private ArrayAdapter<Shirt> adapter;
     private ShirtsHelper helper;
+    private ListView list;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,7 +58,7 @@ public class MainActivity extends Activity {
             }
             c.moveToNext();
         }
-        ListView list = (ListView) findViewById(R.id.list);
+        list = (ListView) findViewById(R.id.list);
         adapter = new ArrayAdapter<Shirt>(this, android.R.layout.simple_list_item_1, android.R.id.text1, shirts);
         list.setAdapter(adapter);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -82,7 +85,7 @@ public class MainActivity extends Activity {
         }
         ArrayList<Shirt> weightedList = new ArrayList<Shirt>();
         for (Shirt s : MainActivity.shirts)
-            for (int i = 0; i < s.daysAgoWorn() * s.rating; ++i)
+            for (int i = 0; i < s.daysAgoWorn() * s.rating + 1; ++i)
                 weightedList.add(s);
         final Shirt choice = weightedList.get(new Random().nextInt(weightedList.size()));
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -93,6 +96,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 choice.wearToday();
+                blinkListItem(shirts.indexOf(choice));
             }
         });
         builder.create().show();
@@ -106,11 +110,17 @@ public class MainActivity extends Activity {
             this.adapter.notifyDataSetChanged();
         }
     }
-    private void blinkListItem(int i)
-    {
-        // Make this make the item blink or change color or something. It isn't as satisfying as it should
-        // be. It feels weak and I don't know that I've done something. How to do this, that's another
-//        issue entirely.
+
+    private void blinkListItem(int i) {
+        final long TIME_TO_BLINK = 300;
+        final View view = this.list.getChildAt(i + this.list.getFirstVisiblePosition());
+        view.setBackgroundColor(Color.YELLOW);
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                view.setBackgroundColor(Color.BLACK);
+            }
+        }, TIME_TO_BLINK);
     }
 
     private void DEBUG_CLEAR() {
