@@ -27,4 +27,7 @@
         <item>"Are you sure you want to wear \""</item>
         <item>"\" today?"</item>
     </string-array>
+    <string name="edit_shirt_menu_button_title">Edit</string>
+    <string name="pick_shirt_menu_button_title">Wear Today</string>
+    <string name="delete_shirt_menu_button_title">Delete</string>
 </resources>

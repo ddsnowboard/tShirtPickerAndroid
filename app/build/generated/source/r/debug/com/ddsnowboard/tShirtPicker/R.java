@@ -23,18 +23,24 @@ public final class R {
         public static final int outline_star1=0x7f020003;
     }
     public static final class id {
-        public static final int add_button=0x7f070005;
-        public static final int add_screen_button=0x7f070004;
-        public static final int delete_button=0x7f070003;
-        public static final int description=0x7f070000;
-        public static final int last_worn=0x7f070001;
-        public static final int list=0x7f070007;
-        public static final int pick_button=0x7f070006;
-        public static final int stars=0x7f070002;
+        public static final int add_button=0x7f080005;
+        public static final int add_screen_button=0x7f080004;
+        public static final int delete_button=0x7f080003;
+        public static final int delete_shirt_menu_button=0x7f08000a;
+        public static final int description=0x7f080000;
+        public static final int edit_shirt_menu_button=0x7f080008;
+        public static final int last_worn=0x7f080001;
+        public static final int list=0x7f080007;
+        public static final int pick_button=0x7f080006;
+        public static final int pick_shirt_menu_button=0x7f080009;
+        public static final int stars=0x7f080002;
     }
     public static final class layout {
         public static final int add_shirt=0x7f030000;
         public static final int main=0x7f030001;
+    }
+    public static final class menu {
+        public static final int long_click_menu=0x7f070000;
     }
     public static final class string {
         public static final int add=0x7f060000;
@@ -47,17 +53,20 @@ public final class R {
         public static final int date_text=0x7f060007;
         public static final int delete_button_text=0x7f060008;
         public static final int delete_question=0x7f060009;
-        public static final int description=0x7f06000a;
-        public static final int description_text=0x7f06000b;
-        public static final int directive=0x7f06000c;
-        public static final int edit=0x7f06000d;
-        public static final int emptyDescriptionWarning=0x7f06000e;
-        public static final int fillList=0x7f06000f;
-        public static final int filled=0x7f060010;
-        public static final int index=0x7f060011;
-        public static final int pick_button_text=0x7f060012;
-        public static final int rating=0x7f060013;
-        public static final int rating_label=0x7f060014;
-        public static final int update_button_text=0x7f060015;
+        public static final int delete_shirt_menu_button_title=0x7f06000a;
+        public static final int description=0x7f06000b;
+        public static final int description_text=0x7f06000c;
+        public static final int directive=0x7f06000d;
+        public static final int edit=0x7f06000e;
+        public static final int edit_shirt_menu_button_title=0x7f06000f;
+        public static final int emptyDescriptionWarning=0x7f060010;
+        public static final int fillList=0x7f060011;
+        public static final int filled=0x7f060012;
+        public static final int index=0x7f060013;
+        public static final int pick_button_text=0x7f060014;
+        public static final int pick_shirt_menu_button_title=0x7f060015;
+        public static final int rating=0x7f060016;
+        public static final int rating_label=0x7f060017;
+        public static final int update_button_text=0x7f060018;
     }
 }

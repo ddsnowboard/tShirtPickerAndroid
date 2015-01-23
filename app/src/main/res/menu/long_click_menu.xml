@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/edit_shirt_menu_button"
+        android:title="@string/edit_shirt_menu_button_title" />
+    <item
+        android:id="@+id/pick_shirt_menu_button"
+        android:title="@string/pick_shirt_menu_button_title" />
+    <item
+        android:id="@+id/delete_shirt_menu_button"
+        android:title="@string/delete_shirt_menu_button_title" />
+</menu>

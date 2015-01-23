@@ -116,7 +116,7 @@ public class Shirt {
 
     public int daysAgoWorn() {
         int out = 0;
-        out = (int)((new Date().getTime() - this.lastWorn.getTime()) / MS_IN_DAY);
+        out = (int) ((new Date().getTime() - this.lastWorn.getTime()) / MS_IN_DAY);
         return out;
     }
 

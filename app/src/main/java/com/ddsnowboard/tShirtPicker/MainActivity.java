@@ -2,6 +2,7 @@ package com.ddsnowboard.tShirtPicker;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -9,6 +10,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.ContextMenu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -59,15 +62,13 @@ public class MainActivity extends Activity {
             c.moveToNext();
         }
         list = (ListView) findViewById(R.id.list);
+        registerForContextMenu(list);
         adapter = new ArrayAdapter<Shirt>(this, android.R.layout.simple_list_item_1, android.R.id.text1, shirts);
         list.setAdapter(adapter);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(getApplicationContext(), AddShirt.class);
-                intent.putExtra(getApplicationContext().getString(R.string.filled), true);
-                intent.putExtra(getApplicationContext().getString(R.string.index), i);
-                startActivity(intent);
+                goToEditScreen(i);
             }
         });
     }
@@ -75,6 +76,13 @@ public class MainActivity extends Activity {
     public void addShirt(View v) {
         Intent intent = new Intent(this, AddShirt.class);
         intent.putExtra(getApplicationContext().getString(R.string.filled), false);
+        startActivity(intent);
+    }
+
+    private void goToEditScreen(int index) {
+        Intent intent = new Intent(getApplicationContext(), AddShirt.class);
+        intent.putExtra(getApplicationContext().getString(R.string.filled), true);
+        intent.putExtra(getApplicationContext().getString(R.string.index), index);
         startActivity(intent);
     }
 
@@ -121,6 +129,32 @@ public class MainActivity extends Activity {
                 view.setBackgroundColor(Color.BLACK);
             }
         }, TIME_TO_BLINK);
+    }
+
+    public void onCreateContextMenu(ContextMenu contextMenu, View v,
+                                    ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(contextMenu, v, menuInfo);
+        getMenuInflater().inflate(R.menu.long_click_menu, contextMenu);
+    }
+
+    public boolean onContextItemSelected(MenuItem item) {
+        final AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        switch (item.getItemId()) {
+            case (R.id.delete_shirt_menu_button):
+                shirts.get((int) info.id).delete();
+                shirts.remove((int) info.id);
+                this.adapter.notifyDataSetChanged();
+                return true;
+            case (R.id.edit_shirt_menu_button):
+                goToEditScreen((int) info.id);
+                this.adapter.notifyDataSetChanged();
+                return true;
+            case (R.id.pick_shirt_menu_button):
+                new PickConfirmationBoxBuilder(getApplicationContext(), shirts.get((int)info.id)).create().show();
+                return true;
+            default:
+                return super.onContextItemSelected(item);
+        }
     }
 
     private void DEBUG_CLEAR() {
