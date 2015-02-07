@@ -36,12 +36,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5828009a-9af6-43e5-834d-70813917d32e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/PickConfirmationBoxBuilder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/menu/long_click_menu.xml" />
-      <change type="DELETED" beforePath="E:\Programming\tShirtPickerAndroid\app\build\generated\source\buildConfig\test\debug\com\ddsnowboard\tShirtPicker\test\BuildConfig.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/DeleteConfirmationBuilder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/AddShirt.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/AddShirt.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/PickConfirmationBoxBuilder.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/PickConfirmationBoxBuilder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/ddsnowboard/tShirtPicker/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/ddsnowboard/tShirtPicker/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/Shirt.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/Shirt.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -66,31 +66,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.50378376" vertical-offset="1812" max-vertical-offset="2737">
-              <caret line="142" column="49" selection-start-line="142" selection-start-column="49" selection-end-line="142" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1545" max-vertical-offset="2890">
+              <caret line="120" column="9" selection-start-line="120" selection-start-column="9" selection-end-line="120" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2536#2586#0" expanded="true" />
-                <element signature="e#2780#2830#0" expanded="true" />
-                <element signature="e#2863#2912#0" expanded="true" />
-                <element signature="e#4112#4165#0" expanded="true" />
-                <element signature="e#4174#4221#0" expanded="true" />
-                <element signature="e#4316#4345#0" expanded="true" />
-                <element signature="e#4354#4378#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <file leaf-file-name="PickConfirmationBoxBuilder.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/PickConfirmationBoxBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.08" vertical-offset="0" max-vertical-offset="663">
-              <caret line="31" column="56" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
-              <folding />
+            <state vertical-scroll-proportion="0.27567568" vertical-offset="0" max-vertical-offset="925">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1043,12 +1038,13 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/DeleteButton.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/add_shirt.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/DeleteDialog.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/AddShirt.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/Shirt.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/long_click_menu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/PickConfirmationBox.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/AddShirt.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/DeleteConfirmationBuilder.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/PickConfirmationBoxBuilder.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/MainActivity.java" />
       </list>
@@ -1108,6 +1104,15 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files" />
+      </pane>
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
+      <pane id="AndroidView">
+        <subPane />
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1298,15 +1303,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files" />
-      </pane>
-      <pane id="PackagesPane">
-        <subPane />
-      </pane>
-      <pane id="AndroidView">
-        <subPane />
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1317,7 +1313,7 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="options.lastSelected" value="preferences.pathVariables" />
+    <property name="options.lastSelected" value="preferences.keymap" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.3745498" />
     <property name="options.searchVisible" value="true" />
@@ -1332,6 +1328,8 @@
     <property name="FullScreen" value="false" />
     <property name="LayoutCode.rearrangeEntriesJava" value="true" />
     <property name="SearchEverywhereHistoryKey" value="str&#9;FILE&#9;file://E:/Programming/tShirtPickerAndroid/app/src/main/res/values/strings.xml&#10;main&#9;PSI&#9;JAVA://com.ddsnowboard.tShirtPicker.MainActivity&#10;string&#9;FILE&#9;file://E:/Programming/tShirtPickerAndroid/app/src/main/res/values/strings.xml" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="OverrideImplement.overriding.sorted" value="false" />
   </component>
   <component name="RunManager" selected="Android Application.app">
     <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
@@ -1542,6 +1540,7 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962668" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296355" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24643423" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1563,7 +1562,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296355" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39936608" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1589,28 +1587,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/Star.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1479">
-          <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/AddShirt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="1071">
-          <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/Shirt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1700">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
@@ -1837,13 +1813,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/RatingBox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.80864865" vertical-offset="0" max-vertical-offset="925">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../AndroidSDK/SDK/platforms/android-10/android.jar!/android/view/ViewGroup.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.48540542" vertical-offset="4243" max-vertical-offset="5168">
@@ -1862,21 +1831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0627027" vertical-offset="231" max-vertical-offset="1156">
           <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/DateBox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.70594597" vertical-offset="775" max-vertical-offset="1700">
-          <caret line="102" column="16" selection-start-line="102" selection-start-column="12" selection-end-line="102" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/ShirtsHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31243244" vertical-offset="0" max-vertical-offset="925">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1905,29 +1859,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../AndroidSDK/SDK/platforms/android-10/android.jar!/java/util/logging/Handler.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09189189" vertical-offset="0" max-vertical-offset="925">
           <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.08" vertical-offset="0" max-vertical-offset="663">
-          <caret line="31" column="56" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1936,54 +1871,118 @@
         <state vertical-scroll-proportion="0.14702703" vertical-offset="0" max-vertical-offset="925">
           <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
           <folding>
-            <element signature="e#186#224#0" expanded="true" />
-            <element signature="e#309#347#0" expanded="true" />
-            <element signature="e#434#474#0" expanded="true" />
+            <element signature="e#186#224#0" expanded="false" />
+            <element signature="e#309#347#0" expanded="false" />
+            <element signature="e#434#474#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45333335" vertical-offset="0" max-vertical-offset="900">
+          <caret line="24" column="87" selection-start-line="24" selection-start-column="87" selection-end-line="24" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/ShirtsHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/RatingBox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.80864865" vertical-offset="0" max-vertical-offset="925">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/DateBox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1700">
+          <caret line="88" column="24" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/Shirt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7610811" vertical-offset="1064" max-vertical-offset="1989">
-          <caret line="119" column="19" selection-start-line="119" selection-start-column="19" selection-end-line="119" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1989">
+          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../AndroidSDK/SDK/platforms/android-10/android.jar!/android/app/Dialog.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.88972974" vertical-offset="1880" max-vertical-offset="2805">
+          <caret line="160" column="0" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../AndroidSDK/SDK/platforms/android-10/android.jar!/android/graphics/PorterDuff.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09189189" vertical-offset="0" max-vertical-offset="925">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
+          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/AddShirt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.3783784" vertical-offset="843" max-vertical-offset="1768">
-          <caret line="43" column="38" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
-          <folding />
+        <state vertical-scroll-proportion="0.6745946" vertical-offset="617" max-vertical-offset="1700">
+          <caret line="95" column="18" selection-start-line="95" selection-start-column="18" selection-end-line="95" selection-end-column="18" />
+          <folding>
+            <element signature="e#3572#3597#0" expanded="true" />
+            <element signature="e#3649#3953#0" expanded="true" />
+            <element signature="e#3938#3939#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/PickConfirmationBoxBuilder.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/DeleteConfirmationBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3491892" vertical-offset="0" max-vertical-offset="925">
-          <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.66162163" vertical-offset="0" max-vertical-offset="986">
+          <caret line="42" column="11" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#397#592#0" expanded="true" />
-            <element signature="e#581#582#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50378376" vertical-offset="1812" max-vertical-offset="2737">
-          <caret line="142" column="49" selection-start-line="142" selection-start-column="49" selection-end-line="142" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1545" max-vertical-offset="2890">
+          <caret line="120" column="9" selection-start-line="120" selection-start-column="9" selection-end-line="120" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2536#2586#0" expanded="true" />
-            <element signature="e#2780#2830#0" expanded="true" />
-            <element signature="e#2863#2912#0" expanded="true" />
-            <element signature="e#4112#4165#0" expanded="true" />
-            <element signature="e#4174#4221#0" expanded="true" />
-            <element signature="e#4316#4345#0" expanded="true" />
-            <element signature="e#4354#4378#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ddsnowboard/tShirtPicker/PickConfirmationBoxBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27567568" vertical-offset="0" max-vertical-offset="925">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

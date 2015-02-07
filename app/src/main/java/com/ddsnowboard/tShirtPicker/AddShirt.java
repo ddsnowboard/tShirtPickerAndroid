@@ -93,23 +93,16 @@ public class AddShirt extends Activity {
 
     public void askDeleteShirt(View view) {
         if (curr != null) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage(R.string.delete_question);
-            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            final DeleteConfirmationBuilder builder = new DeleteConfirmationBuilder(AddShirt.this, curr, intent.getIntExtra(getString(R.string.index), -1));
+            builder.setPositiveButton("No", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
-                    deleteShirt();
+                    DeleteConfirmationBuilder.onYes(builder.getCurr(), builder.getPosition());
+                    sendToMain();
                 }
             });
-            builder.setNegativeButton("No", null);
             builder.create().show();
         }
-    }
-
-    public void deleteShirt() {
-        curr.delete();
-        MainActivity.shirts.remove(intent.getIntExtra(getString(R.string.index), -1));
-        sendToMain();
     }
 
     private void sendToMain() {

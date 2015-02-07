@@ -1,9 +1,6 @@
 package com.ddsnowboard.tShirtPicker;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
@@ -29,7 +26,7 @@ public class MainActivity extends Activity {
      */
     private static final String TAG = "MainActivity";
     public static ArrayList<Shirt> shirts;
-    private ArrayAdapter<Shirt> adapter;
+    public ArrayAdapter<Shirt> adapter;
     private ShirtsHelper helper;
     private ListView list;
 
@@ -42,7 +39,8 @@ public class MainActivity extends Activity {
         helper = new ShirtsHelper(this);
         Shirt.setDatabase(helper);
         Shirt.setContext(this);
-//        DEBUG_CLEAR();
+        DEBUG_CLEAR();
+        DEBUG_ADD();
         Cursor c = helper.selectAll();
         c.moveToFirst();
         String currDescription;
@@ -96,18 +94,7 @@ public class MainActivity extends Activity {
             for (int i = 0; i < s.daysAgoWorn() * s.rating + 1; ++i)
                 weightedList.add(s);
         final Shirt choice = weightedList.get(new Random().nextInt(weightedList.size()));
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        String[] sides = getResources().getStringArray(R.array.pick_shirt_message);
-        builder.setMessage(sides[0] + choice.description + sides[1]);
-        builder.setNegativeButton("No", null);
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                choice.wearToday();
-                blinkListItem(shirts.indexOf(choice));
-            }
-        });
-        builder.create().show();
+        new PickConfirmationBoxBuilder(MainActivity.this, choice).create().show();
     }
 
     @Override
@@ -119,16 +106,19 @@ public class MainActivity extends Activity {
         }
     }
 
-    private void blinkListItem(int i) {
+    public void blinkListItem(int i) {
         final long TIME_TO_BLINK = 300;
-        final View view = this.list.getChildAt(i + this.list.getFirstVisiblePosition());
-        view.setBackgroundColor(Color.YELLOW);
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            public void run() {
-                view.setBackgroundColor(Color.BLACK);
-            }
-        }, TIME_TO_BLINK);
+        final View view = this.list.getChildAt(i - this.list.getFirstVisiblePosition());
+        try {
+            view.setBackgroundColor(Color.YELLOW);
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    view.setBackgroundColor(Color.BLACK);
+                }
+            }, TIME_TO_BLINK);
+        } catch (NullPointerException e) {
+        }
     }
 
     public void onCreateContextMenu(ContextMenu contextMenu, View v,
@@ -141,16 +131,13 @@ public class MainActivity extends Activity {
         final AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         switch (item.getItemId()) {
             case (R.id.delete_shirt_menu_button):
-                shirts.get((int) info.id).delete();
-                shirts.remove((int) info.id);
-                this.adapter.notifyDataSetChanged();
+                new DeleteConfirmationBuilder(MainActivity.this, shirts.get((int) info.id), info.position).create().show();
                 return true;
             case (R.id.edit_shirt_menu_button):
                 goToEditScreen((int) info.id);
-                this.adapter.notifyDataSetChanged();
                 return true;
             case (R.id.pick_shirt_menu_button):
-                new PickConfirmationBoxBuilder(getApplicationContext(), shirts.get((int)info.id)).create().show();
+                new PickConfirmationBoxBuilder(MainActivity.this, shirts.get((int) info.id)).create().show();
                 return true;
             default:
                 return super.onContextItemSelected(item);
@@ -159,5 +146,24 @@ public class MainActivity extends Activity {
 
     private void DEBUG_CLEAR() {
         helper.getWritableDatabase().delete(ShirtsHelper.DATABASE_NAME, null, null);
+    }
+
+    private void DEBUG_ADD() {
+        try {
+            new Shirt(0, "Lake Shirt", "2015-01-01", 2, false);
+            new Shirt(0, "Sheldon's Spot", "2015-01-15", 3, false);
+            new Shirt(0, "Black Keys Concert", "2015-02-01", 5, false);
+            new Shirt(0, "Dawes", "2015-02-07", 5, false);
+            new Shirt(0, "Salmon Cross Country Shirt", "2015-01-05", 4, false);
+            new Shirt(0, "Dixon", "2015-02-01", 4, false);
+            new Shirt(0, "Aim High", "2014-12-31", 3, false);
+            new Shirt(0, "Priory Invitational 2013", "2014-12-30", 4, false);
+            new Shirt(0, "Seaside", "2015-01-05", 4, false);
+            new Shirt(0, "Aperture Science", "2015-02-04", 3, false);
+            new Shirt(0, "Rush Concert", "2015-02-01", 5, false);
+            new Shirt(0, "Field Day 2014", "2015-01-20", 3, false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
