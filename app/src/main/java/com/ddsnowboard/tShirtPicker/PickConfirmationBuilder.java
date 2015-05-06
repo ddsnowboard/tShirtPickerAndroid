@@ -7,8 +7,8 @@ import android.content.DialogInterface;
 /**
  * Created by ddsnowboard on 1/22/2015.
  */
-public class PickConfirmationBoxBuilder extends AlertDialog.Builder {
-    public PickConfirmationBoxBuilder(final MainActivity ctx, final Shirt choice) {
+public class PickConfirmationBuilder extends AlertDialog.Builder {
+    public PickConfirmationBuilder(final MainActivity ctx, final Shirt choice) {
         super(ctx);
         this.setMessage("Do you want to wear " + choice.description + " today?");
         this.setPositiveButton("Yes", new DialogInterface.OnClickListener() {

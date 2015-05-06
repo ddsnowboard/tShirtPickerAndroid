@@ -8,6 +8,7 @@
     <string name="add_screen_button_text">Done</string>
     <string name="add_shirt_label">Add a Shirt</string>
     <string name="app_name">T-Shirt Picker</string>
+    <string name="creatingShirt">CREATING?</string>
     <string name="database_service_name">.DatabaseService</string>
     <string name="date">DATE</string>
     <string name="date_text">YYYY-MM-DD, or blank if unknown</string>
@@ -21,7 +22,6 @@
     <string name="edit_shirt_menu_button_title">Edit</string>
     <string name="emptyDescriptionWarning">Your description is empty. Are you sure you want to create this shirt?</string>
     <string name="fillList">FILL_LIST</string>
-    <string name="filled">FILLED?</string>
     <string name="index">INDEX</string>
     <string name="pick_button_text">Pick Shirt</string>
     <string name="pick_shirt_menu_button_title">Wear Today</string>

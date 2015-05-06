@@ -26,59 +26,37 @@ import java.util.Date;
  */
 public class DateBox {
 
-    private static final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+    private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
     private final static String TAG = "DateBox";
+    // The LinlearLayout we're in.
     private final LinearLayout master;
     private final EditText box;
+    // We call this up if we have to yell at the user.
     private final TextView complaint;
     private final Context context;
+    // The LinearLayout we make for this to contain everything.
     private final LinearLayout frame;
     private boolean complaining;
     private TodayButton todayButton;
 
     public DateBox(Context ctx, LinearLayout master) {
         this.master = master;
-        this.frame = new LinearLayout(ctx);
-        this.context = ctx;
-        this.complaining = false;
-        this.box = new EditText(this.context);
-        this.box.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 1.0f));
-        this.frame.setOrientation(LinearLayout.HORIZONTAL);
+        frame = new LinearLayout(ctx);
+        context = ctx;
+        complaining = false;
+        box = new EditText(context);
+        box.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 1.0f));
+        frame.setOrientation(LinearLayout.HORIZONTAL);
         this.master.addView(this.frame);
-        this.frame.addView(this.box);
-        this.todayButton = new TodayButton(ctx, this.box);
-        this.frame.addView(this.todayButton);
-        this.complaint = new TextView(this.context);
+        frame.addView(this.box);
+        todayButton = new TodayButton(context, this.box);
+        frame.addView(this.todayButton);
+        complaint = new TextView(this.context);
         this.master.addView(this.complaint);
-        this.box.setHint(R.string.date_text);
-        this.box.setInputType(InputType.TYPE_CLASS_DATETIME);
-        this.complaint.setTextColor(Color.RED);
-        this.box.addTextChangedListener(new TextWatcher() {
-
-            public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
-            }
-
-            public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
-            }
-
-            public void afterTextChanged(Editable text) {
-                if (text.toString().equals("")) {
-                    setComplaint(false, null);
-                } else {
-                    try {
-                        Date date = format.parse(text.toString());
-                        if (date.after(new Date())) {
-                            setComplaint(true, "That date is after today.");
-                        } else {
-                            setComplaint(false, null);
-                        }
-                    } catch (ParseException ex) {
-                        setComplaint(true, "That date isn't formatted properly (YYYY-MM-DD)");
-                    }
-                }
-            }
-        });
-
+        box.setHint(R.string.date_box_hint);
+        box.setInputType(InputType.TYPE_CLASS_DATETIME);
+        complaint.setTextColor(Color.RED);
+        box.addTextChangedListener(getInputChecker());
     }
 
     private void setComplaint(boolean complaining, String complaint) {
@@ -98,7 +76,7 @@ public class DateBox {
 
     public Date getDate() {
         try {
-            return format.parse(this.box.getText().toString());
+            return DATE_FORMAT.parse(this.box.getText().toString());
         } catch (ParseException ex) {
             Log.e(TAG, "There was a problem parsing");
             return new Date();
@@ -106,11 +84,38 @@ public class DateBox {
     }
 
     public void setDate(Date date) {
-        this.box.setText(format.format(date));
+        this.box.setText(DATE_FORMAT.format(date));
     }
 
     public String getText() {
         return this.box.getText().toString();
     }
 
+    private TextWatcher getInputChecker() {
+        return new TextWatcher() {
+
+            public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
+            }
+
+            public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
+            }
+
+            public void afterTextChanged(Editable text) {
+                if (text.toString().equals("")) {
+                    setComplaint(false, null);
+                } else {
+                    try {
+                        Date date = DATE_FORMAT.parse(text.toString());
+                        if (date.after(new Date())) {
+                            setComplaint(true, "That date is after today.");
+                        } else {
+                            setComplaint(false, null);
+                        }
+                    } catch (ParseException ex) {
+                        setComplaint(true, "That date isn't formatted properly (YYYY-MM-DD)");
+                    }
+                }
+            }
+        };
+    }
 }

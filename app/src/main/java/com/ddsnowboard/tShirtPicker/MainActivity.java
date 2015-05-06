@@ -26,6 +26,7 @@ public class MainActivity extends Activity {
      */
     private static final String TAG = "MainActivity";
     public static ArrayList<Shirt> shirts;
+    public static MainActivity singletonSelf;
     public ArrayAdapter<Shirt> adapter;
     private ShirtsHelper helper;
     private ListView list;
@@ -33,6 +34,7 @@ public class MainActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        singletonSelf = this;
         setContentView(R.layout.main);
         Star.retrieveImages(this);
         shirts = new ArrayList<Shirt>();
@@ -74,13 +76,13 @@ public class MainActivity extends Activity {
 
     public void addShirt(View v) {
         Intent intent = new Intent(this, AddShirt.class);
-        intent.putExtra(getApplicationContext().getString(R.string.filled), false);
+        intent.putExtra(getApplicationContext().getString(R.string.creatingShirt), true);
         startActivity(intent);
     }
 
     private void goToEditScreen(int index) {
         Intent intent = new Intent(getApplicationContext(), AddShirt.class);
-        intent.putExtra(getApplicationContext().getString(R.string.filled), true);
+        intent.putExtra(getApplicationContext().getString(R.string.creatingShirt), false);
         intent.putExtra(getApplicationContext().getString(R.string.index), index);
         startActivity(intent);
     }
@@ -95,7 +97,7 @@ public class MainActivity extends Activity {
             for (int i = 0; i < s.daysAgoWorn() * s.rating + 1; ++i)
                 weightedList.add(s);
         final Shirt choice = weightedList.get(new Random().nextInt(weightedList.size()));
-        new PickConfirmationBoxBuilder(MainActivity.this, choice).create().show();
+        new PickConfirmationBuilder(MainActivity.this, choice).create().show();
     }
 
     @Override
@@ -138,7 +140,7 @@ public class MainActivity extends Activity {
                 goToEditScreen((int) info.id);
                 return true;
             case (R.id.pick_shirt_menu_button):
-                new PickConfirmationBoxBuilder(MainActivity.this, shirts.get((int) info.id)).create().show();
+                new PickConfirmationBuilder(MainActivity.this, shirts.get((int) info.id)).create().show();
                 return true;
             default:
                 return super.onContextItemSelected(item);
