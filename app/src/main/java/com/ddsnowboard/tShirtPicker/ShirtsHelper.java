@@ -22,6 +22,10 @@ public class ShirtsHelper extends SQLiteOpenHelper {
     public final static String DATE = "date";
     public final static String RATING = "rating";
     public final static String TAG = "ShirtsHelper";
+    public final static int ID_COLUMN_NUMBER = 0;
+    public final static int DESCRIPTION_COLUMN_NUMBER = 1;
+    public final static int DATE_COLUMN_NUMBER = 2;
+    public final static int RATING_COLUMN_NUMBER = 3;
 
     public ShirtsHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

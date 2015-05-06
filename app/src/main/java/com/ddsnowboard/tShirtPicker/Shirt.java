@@ -65,7 +65,7 @@ public class Shirt {
             values.put(ShirtsHelper.DESCRIPTION, this.description);
             values.put(ShirtsHelper.DATE, this.lastWorn.getTime());
             values.put(ShirtsHelper.RATING, this.rating);
-            db.insert(ShirtsHelper.DATABASE_NAME, null, values);
+            Log.e(Shirt.TAG, "Inserted shirt at row: " + String.valueOf(db.insert(ShirtsHelper.DATABASE_NAME, null, values)));
         }
     }
 

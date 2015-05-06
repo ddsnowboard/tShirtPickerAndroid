@@ -39,8 +39,9 @@ public class MainActivity extends Activity {
         helper = new ShirtsHelper(this);
         Shirt.setDatabase(helper);
         Shirt.setContext(this);
-        DEBUG_CLEAR();
-        DEBUG_ADD();
+//        IF THESE AREN'T COMMENTED, THIS ISN'T READY TO SHIP, YOU HOPELESS JACKASS!
+//        DEBUG_CLEAR();
+//        DEBUG_ADD();
         Cursor c = helper.selectAll();
         c.moveToFirst();
         String currDescription;
@@ -48,10 +49,10 @@ public class MainActivity extends Activity {
         int currRating;
         int currId;
         while (!c.isAfterLast()) {
-            currId = c.getInt(0);
-            currDescription = c.getString(1);
-            currDate = c.getLong(2);
-            currRating = c.getInt(3);
+            currId = c.getInt(ShirtsHelper.ID_COLUMN_NUMBER);
+            currDescription = c.getString(ShirtsHelper.DESCRIPTION_COLUMN_NUMBER);
+            currDate = c.getLong(ShirtsHelper.DATE_COLUMN_NUMBER);
+            currRating = c.getInt(ShirtsHelper.RATING_COLUMN_NUMBER);
             try {
                 shirts.add(new Shirt(currId, currDescription, new Date(currDate), currRating, true));
             } catch (Exception ex) {
