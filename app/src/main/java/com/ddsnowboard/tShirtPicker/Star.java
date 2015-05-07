@@ -15,12 +15,14 @@ import android.widget.LinearLayout;
 
 /**
  * @author ddsnowboard
+ * This is the class that makes up the RatingBox.
  */
 public class Star extends ImageView {
 
-    public static Resources res;
+    public static Resources resources;
     public static Drawable filledStar;
     public static Drawable outlineStar;
+//  Which number star it is in the RatingBox.
     private final int index;
     private final RatingBox master;
     private boolean on;
@@ -29,26 +31,26 @@ public class Star extends ImageView {
         super(ctx);
         this.master = master;
         this.index = index;
-        this.setScaleType(ScaleType.FIT_XY);
-        this.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT, 1.0f));
-        this.setOnClickListener(new OnClickListener() {
+        setScaleType(ScaleType.FIT_XY);
+        setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT, 1.0f));
+        setOnClickListener(new OnClickListener() {
 
             public void onClick(View view) {
                 ((Star) view).click();
             }
         });
-        this.on = on;
+        on = on;
         if (on) {
-            this.setImageDrawable(filledStar);
+            setImageDrawable(filledStar);
         } else {
-            this.setImageDrawable(outlineStar);
+            setImageDrawable(outlineStar);
         }
     }
 
     public static void retrieveImages(Context ctx) {
-        res = ctx.getResources();
-        filledStar = res.getDrawable(R.drawable.filled_star);
-        outlineStar = res.getDrawable(R.drawable.outline_star);
+        resources = ctx.getResources();
+        filledStar = resources.getDrawable(R.drawable.filled_star);
+        outlineStar = resources.getDrawable(R.drawable.outline_star);
     }
 
     public boolean isOn() {
@@ -56,26 +58,26 @@ public class Star extends ImageView {
     }
 
     public void toggle() {
-        if (this.on) {
-            this.on = false;
-            this.off();
+        if (on) {
+            on = false;
+            off();
         } else if (!this.on) {
-            this.on = true;
-            this.on();
+            on = true;
+            on();
         }
     }
 
     public void off() {
-        this.on = false;
-        this.setImageDrawable(outlineStar);
+        on = false;
+        setImageDrawable(outlineStar);
     }
 
     public void on() {
-        this.on = true;
-        this.setImageDrawable(filledStar);
+        on = true;
+        setImageDrawable(filledStar);
     }
 
     public void click() {
-        this.master.click(this.index);
+        master.click(index);
     }
 }

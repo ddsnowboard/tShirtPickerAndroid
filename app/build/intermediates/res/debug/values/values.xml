@@ -11,7 +11,7 @@
     <string name="creatingShirt">CREATING?</string>
     <string name="database_service_name">.DatabaseService</string>
     <string name="date">DATE</string>
-    <string name="date_text">YYYY-MM-DD, or blank if unknown</string>
+    <string name="date_box_hint">YYYY-MM-DD, or blank if unknown</string>
     <string name="delete_button_text">Delete Shirt</string>
     <string name="delete_question">Are you sure you want to delete this shirt?</string>
     <string name="delete_shirt_menu_button_title">Delete</string>

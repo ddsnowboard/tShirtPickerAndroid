@@ -26,24 +26,43 @@ public class MainActivity extends Activity {
      */
     private static final String TAG = "MainActivity";
     public static ArrayList<Shirt> shirts;
+    // I have this around in case I need to access something from this in an inconvenient
+    // place. I can call this up from anywhere and it is really easy.
     public static MainActivity singletonSelf;
     public ArrayAdapter<Shirt> adapter;
     private ShirtsHelper helper;
-    private ListView list;
+    private ListView ListViewForShirts;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         singletonSelf = this;
         setContentView(R.layout.main);
+        // Initializes the images for the stars.
         Star.retrieveImages(this);
         shirts = new ArrayList<Shirt>();
         helper = new ShirtsHelper(this);
+        // Initialize some things in the Shirt object.
         Shirt.setDatabase(helper);
         Shirt.setContext(this);
 //        IF THESE AREN'T COMMENTED, THIS ISN'T READY TO SHIP, YOU HOPELESS JACKASS!
 //        DEBUG_CLEAR();
 //        DEBUG_ADD();
+        readInShirtsFromDB();
+        ListViewForShirts = (ListView) findViewById(R.id.list);
+        registerForContextMenu(ListViewForShirts);
+        // I'm not 100% sure what some of these inputs are for this. Maybe I should do some research...
+        adapter = new ArrayAdapter<Shirt>(this, android.R.layout.simple_list_item_1, android.R.id.text1, shirts);
+        ListViewForShirts.setAdapter(adapter);
+        ListViewForShirts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int index, long l) {
+                goToEditScreen(index);
+            }
+        });
+    }
+
+    private void readInShirtsFromDB() {
         Cursor c = helper.selectAll();
         c.moveToFirst();
         String currDescription;
@@ -62,20 +81,10 @@ public class MainActivity extends Activity {
             }
             c.moveToNext();
         }
-        list = (ListView) findViewById(R.id.list);
-        registerForContextMenu(list);
-        adapter = new ArrayAdapter<Shirt>(this, android.R.layout.simple_list_item_1, android.R.id.text1, shirts);
-        list.setAdapter(adapter);
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                goToEditScreen(i);
-            }
-        });
     }
 
     public void addShirt(View v) {
-        Intent intent = new Intent(this, AddShirt.class);
+        Intent intent = new Intent(getApplicationContext(), AddShirt.class);
         intent.putExtra(getApplicationContext().getString(R.string.creatingShirt), true);
         startActivity(intent);
     }
@@ -92,6 +101,9 @@ public class MainActivity extends Activity {
             Log.e(TAG, "Its empty");
             return;
         }
+        // This just makes a list each shirt represented proportionally to its rating and the
+        // time since it has been worn, and then picks from that list randomly to get a weighted
+        // decision.
         ArrayList<Shirt> weightedList = new ArrayList<Shirt>();
         for (Shirt s : MainActivity.shirts)
             for (int i = 0; i < s.daysAgoWorn() * s.rating + 1; ++i)
@@ -102,16 +114,18 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onNewIntent(Intent intent) {
+        // I know these do the same thing, but I am leaving it open to expansion.
         if (intent.getStringExtra(getApplicationContext().getString(R.string.directive)).equals(getApplicationContext().getString(R.string.add))) {
             this.adapter.notifyDataSetChanged();
         } else if (intent.getStringExtra(getString(R.string.directive)).equals(getString(R.string.edit))) {
             this.adapter.notifyDataSetChanged();
         }
     }
-
+    // This lights up the shirt that is randomly picked if it is on the screen. I thought that there
+    // should be some way of knowing that the shirt you picked was picked, so I put this in.
     public void blinkListItem(int i) {
         final long TIME_TO_BLINK = 300;
-        final View view = this.list.getChildAt(i - this.list.getFirstVisiblePosition());
+        final View view = this.ListViewForShirts.getChildAt(i - this.ListViewForShirts.getFirstVisiblePosition());
         try {
             view.setBackgroundColor(Color.YELLOW);
             Handler handler = new Handler();
@@ -146,25 +160,26 @@ public class MainActivity extends Activity {
                 return super.onContextItemSelected(item);
         }
     }
-
+    // I just have these methods for development purposes. I can call them and painlessly undo whatever
+    // tinkering I did and replace a standard set to play with the next time.
     private void DEBUG_CLEAR() {
         helper.getWritableDatabase().delete(ShirtsHelper.DATABASE_NAME, null, null);
     }
 
     private void DEBUG_ADD() {
         try {
-            new Shirt(0, "Lake Shirt", "2015-01-01", 2, false);
-            new Shirt(0, "Sheldon's Spot", "2015-01-15", 3, false);
-            new Shirt(0, "Black Keys Concert", "2015-02-01", 5, false);
-            new Shirt(0, "Dawes", "2015-02-07", 5, false);
-            new Shirt(0, "Salmon Cross Country Shirt", "2015-01-05", 4, false);
-            new Shirt(0, "Dixon", "2015-02-01", 4, false);
-            new Shirt(0, "Aim High", "2014-12-31", 3, false);
-            new Shirt(0, "Priory Invitational 2013", "2014-12-30", 4, false);
-            new Shirt(0, "Seaside", "2015-01-05", 4, false);
-            new Shirt(0, "Aperture Science", "2015-02-04", 3, false);
-            new Shirt(0, "Rush Concert", "2015-02-01", 5, false);
-            new Shirt(0, "Field Day 2014", "2015-01-20", 3, false);
+            new Shirt(Shirt.UNKNOWN_ID, "Lake Shirt", "2015-01-01", 2, false);
+            new Shirt(Shirt.UNKNOWN_ID, "Sheldon's Spot", "2015-01-15", 3, false);
+            new Shirt(Shirt.UNKNOWN_ID, "Black Keys Concert", "2015-02-01", 5, false);
+            new Shirt(Shirt.UNKNOWN_ID, "Dawes", "2015-02-07", 5, false);
+            new Shirt(Shirt.UNKNOWN_ID, "Salmon Cross Country Shirt", "2015-01-05", 4, false);
+            new Shirt(Shirt.UNKNOWN_ID, "Dixon", "2015-02-01", 4, false);
+            new Shirt(Shirt.UNKNOWN_ID, "Aim High", "2014-12-31", 3, false);
+            new Shirt(Shirt.UNKNOWN_ID, "Priory Invitational 2013", "2014-12-30", 4, false);
+            new Shirt(Shirt.UNKNOWN_ID, "Seaside", "2015-01-05", 4, false);
+            new Shirt(Shirt.UNKNOWN_ID, "Aperture Science", "2015-02-04", 3, false);
+            new Shirt(Shirt.UNKNOWN_ID, "Rush Concert", "2015-02-01", 5, false);
+            new Shirt(Shirt.UNKNOWN_ID, "Field Day 2014", "2015-01-20", 3, false);
         } catch (Exception e) {
             e.printStackTrace();
         }

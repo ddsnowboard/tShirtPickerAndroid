@@ -48,7 +48,7 @@ public final class R {
         public static final int creatingShirt=0x7f050005;
         public static final int database_service_name=0x7f050006;
         public static final int date=0x7f050007;
-        public static final int date_box_hint =0x7f050008;
+        public static final int date_box_hint=0x7f050008;
         public static final int delete_button_text=0x7f050009;
         public static final int delete_question=0x7f05000a;
         public static final int delete_shirt_menu_button_title=0x7f05000b;

@@ -93,7 +93,7 @@ public class AddShirt extends Activity {
         // All DB functionality is handled in the Shirt object, so I don't have to play with it
         // here.
         if (creating) {
-            MainActivity.shirts.add(new Shirt(0, this.descriptionBox.getText().toString(), this.dateBox.getText(), this.ratingBox.get(), false));
+            MainActivity.shirts.add(new Shirt(Shirt.UNKNOWN_ID, this.descriptionBox.getText().toString(), this.dateBox.getText(), this.ratingBox.get(), false));
         } else {
             curr.edit(this.descriptionBox.getText().toString(), this.dateBox.getText(), this.ratingBox.get());
         }
@@ -118,13 +118,17 @@ public class AddShirt extends Activity {
 
     private void sendToMain() {
         Intent outboundIntent = new Intent(this, MainActivity.class);
-        outboundIntent.putExtra(getString(R.string.directive), getString(R.string.edit));
+        if (!creating) {
+            outboundIntent.putExtra(getString(R.string.directive), getString(R.string.edit));
+        } else if (creating) {
+            outboundIntent.putExtra(getString(R.string.directive), getString(R.string.add));
+        }
         // I don't know why these are here, but I have a feeling there's a really good
         // reason for it that I forgot. I might have accidentally replaced it with this.finish()
         // though.
 //        outboundIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 //        outboundIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         startActivity(outboundIntent);
-        this.finish();
+        finish();
     }
 }

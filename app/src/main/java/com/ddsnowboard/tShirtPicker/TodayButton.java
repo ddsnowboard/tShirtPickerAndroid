@@ -17,6 +17,8 @@ import java.util.Date;
 
 /**
  * @author ddsnowboard
+ * Put this next to an EditText, give it the EditText, and it will put todays date in there
+ * when you click it.
  */
 public class TodayButton extends Button {
 
